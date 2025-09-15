@@ -19,10 +19,12 @@ Core Game
 • Toroidal World: Edges wrap around (top connects to bottom, left to right)
 
 
+
 Three Game Modes
 1. Random Game: Starts with random cell pattern, auto-resets when pattern dies/repeats
 2. Custom Builder: Interactive editor to design your own starting patterns
 3. Preset Patterns: 5 famous Conway patterns including Gosper Glider Gun
+
 
 
 Controls (5-button resistor ladder)
@@ -30,6 +32,7 @@ Controls (5-button resistor ladder)
 • Menu Navigation: UP/DOWN navigate, SET selects, LEFT goes back 
 • Pattern Editor: Arrow keys move cursor, SET toggles cells, long-press SET starts simulation 
 • During Simulation: UP/DOWN changes speed (12 levels), LEFT/RIGHT generates new random
+
 
 
 Features
