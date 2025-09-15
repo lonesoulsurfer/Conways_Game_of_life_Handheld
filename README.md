@@ -48,25 +48,41 @@ Features
 
 Heres some more ideas to implement:
 
+
 Pattern Management
 • Pattern Save/Load: Store custom patterns in EEPROM with names 
+
 • Pattern Library: More famous patterns (pulsar, pentadecathlon, etc.) 
+
 • Random Seeds: Different randomization algorithms (sparse, dense, clusters) 
+
 • Symmetrical Patterns: Generate symmetric starting conditions
 
 Game Modes
 • Survival Mode: Try to keep population above threshold for X generations 
+
 • Target Mode: Reach specific cell count goals 
+
 • Time Challenge: Fastest to stabilization 
+
 • Multi-Rule Mode: Different cellular automaton rules (B36/S23, etc.)
+
+
 Advanced Controls
 • Step Mode: Advance one generation at a time with button press 
+
 • Rewind: Store last N generations for backward stepping 
+
 • Pause/Resume: Freeze simulation mid-run 
+
 • Bookmark Positions: Mark interesting generations to return to
+
 Statistics & Analysis
+
 • Population Oscillation Detection: Identify period-N oscillators 
+
 • Stability Analysis: Time to stabilization metrics 
+
 • High Score System: Longest-lived patterns, highest populations 
 • Pattern Classification: Auto-detect gliders, oscillators, still lifes
 Hardware Enhancements
