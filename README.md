@@ -50,6 +50,8 @@ Heres some more ideas to implement:
 
 
 Pattern Management
+
+
 • Pattern Save/Load: Store custom patterns in EEPROM with names 
 
 • Pattern Library: More famous patterns (pulsar, pentadecathlon, etc.) 
@@ -59,6 +61,8 @@ Pattern Management
 • Symmetrical Patterns: Generate symmetric starting conditions
 
 Game Modes
+
+
 • Survival Mode: Try to keep population above threshold for X generations 
 
 • Target Mode: Reach specific cell count goals 
@@ -68,7 +72,11 @@ Game Modes
 • Multi-Rule Mode: Different cellular automaton rules (B36/S23, etc.)
 
 
+
+
 Advanced Controls
+
+
 • Step Mode: Advance one generation at a time with button press 
 
 • Rewind: Store last N generations for backward stepping 
@@ -77,14 +85,24 @@ Advanced Controls
 
 • Bookmark Positions: Mark interesting generations to return to
 
+
+
 Statistics & Analysis
+
 
 • Population Oscillation Detection: Identify period-N oscillators 
 
 • Stability Analysis: Time to stabilization metrics 
 
 • High Score System: Longest-lived patterns, highest populations 
+
 • Pattern Classification: Auto-detect gliders, oscillators, still lifes
+
+
+
 Hardware Enhancements
+
+
 • Sound Effects: Beeps for births/deaths, musical tones for populations 
+
  • Color Coding: Different colors for cell age or generation born
