@@ -26,12 +26,14 @@ Three Game Modes
 
 
 Controls (5-button resistor ladder)
+
 • Menu Navigation: UP/DOWN navigate, SET selects, LEFT goes back 
 • Pattern Editor: Arrow keys move cursor, SET toggles cells, long-press SET starts simulation 
 • During Simulation: UP/DOWN changes speed (12 levels), LEFT/RIGHT generates new random
 
 
 Features
+
 • Real-time Statistics: Generation counter, live cell count, max cells reached 
 • Smart Detection: Automatically detects when patterns die out or start repeating 
 • Game Over Screen: Shows final statistics for 4 seconds 
