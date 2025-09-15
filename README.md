@@ -46,6 +46,10 @@ Features
 • Menu System: Clean interface with pattern submenu
 
 
+
+
+
+
 Heres some more ideas to implement:
 
 
