@@ -13,6 +13,7 @@ Alt Games: Alternative cellular automata collection
    • Seeds: Birth-only automaton creating explosive wave patterns
    • Langton's Ant: Single ant creating emergent highway patterns
 
+
 I’ve been fascinated with Conway’s Game of Life ever since I read ‘The Recursive Universe’ way back in 2012. Since then, I wanted a way that I could play the game just like you would play a Nintendo ‘Game & Watch’ – a pocket-sized version that I could whip out anytime and start to explore & build my own patterns.
 
 Fast-forward to 2025 and that idea has become reality! Arduino AI Assistant has been a massive help in building the code and there is absolutely no way that I could of done it without AI’s assistance. If you haven’t used it before and don’t know much about coding, then I strongly recommend that you give it a try.
