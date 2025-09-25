@@ -4,10 +4,8 @@ YouTube Vid
 Short - https://youtube.com/shorts/Atr1aoWWVLA
 
 Version 2 includes the following updates:
-
-Symmetric Game: Generate symmetric patterns (Small/Medium/Large)
-
-Alt Games: Alternative cellular automata collection
+- Symmetric Game: Generate symmetric patterns (Small/Medium/Large)
+- Alt Games: Alternative cellular automata collection
    • Brian's Brain: 3-state automaton with birth/dying/dead phases
    • Day & Night: Inverse Conway rules creating dense stable patterns
    • Seeds: Birth-only automaton creating explosive wave patterns
