@@ -26,13 +26,10 @@ Core Game
 
 
 
-Three Game Modes
+5 Game Modes (4 & 5 added in V2)
 1. Random Game: Starts with random cell pattern, auto-resets when pattern dies/repeats
 2. Custom Builder: Interactive editor to design your own starting patterns
 3. Preset Patterns: 5 famous Conway patterns including Gosper Glider Gun
-
-(4 & 5 added in V2)
-
 4. Custom Game: Build your own pattern with cursor, long-press SET to start
 5. Alt Games: Alternative cellular automata collection
      • Brian's Brain: 3-state automaton with birth/dying/dead phases
