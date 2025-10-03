@@ -32,9 +32,13 @@ Core Game
 3. Preset Patterns: 5 famous Conway patterns including Gosper Glider Gun
 4. Custom Game: Build your own pattern with cursor, long-press SET to start
 5. Alt Games: Alternative cellular automata collection
+   
      • Brian's Brain: 3-state automaton with birth/dying/dead phases
+   
      • Day & Night: Inverse Conway rules creating dense stable patterns
+   
      • Seeds: Birth-only automaton creating explosive wave patterns
+   
      • Langton's Ant: Single ant creating emergent highway patterns
 
 
