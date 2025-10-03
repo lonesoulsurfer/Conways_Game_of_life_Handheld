@@ -3,6 +3,8 @@
 YouTube Vid
 Short - https://youtube.com/shorts/Atr1aoWWVLA
 
+Long - https://youtu.be/dLQRpCf72iw
+
 
 
 I’ve been fascinated with Conway’s Game of Life ever since I read ‘The Recursive Universe’ way back in 2012. Since then, I wanted a way that I could play the game just like you would play a Nintendo ‘Game & Watch’ – a pocket-sized version that I could whip out anytime and start to explore & build my own patterns.
