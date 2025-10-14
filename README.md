@@ -24,15 +24,21 @@ FEATURES:
  * • Automatic pattern detection and game reset
  * • Battery-optimized resistor ladder button input
 
+
    
- * HARDWARE REQUIREMENTS:
+HARDWARE REQUIREMENTS:
+
+
  * • Arduino-compatible microcontroller (tested on Trinket M0)
  * • SSD1306 128x64 OLED display (I2C)
  * • 5-button resistor ladder on analog pin A3
  * • Button B on analog pin A4 (menu return/navigation)
 
    
- * BUTTON MAPPING (Resistor Ladder on A3):
+
+BUTTON MAPPING (Resistor Ladder on A3):
+
+
  * • UP: ~39kΩ to 5V    (Navigation/Cursor up/Speed up)
  * • DOWN: ~33kΩ to 5V  (Navigation/Cursor down/Speed down) 
  * • LEFT: ~20kΩ to 5V  (Cursor left/New pattern/Back in menu)
@@ -40,10 +46,14 @@ FEATURES:
  * • SET: ~5.1kΩ to 5V  (Select/Toggle cell/Start simulation)
  * 
  * BUTTON B (on A4):
+
+   
  * • ~15K to 5V    (Return to appropriate menu from anywhere)
 
    
- * GAME MODES:
+GAME MODES:
+
+
  * 1. Preset Patterns: Choose from 5 famous Conway patterns
  *    - Coe Ship, Gosper Glider Gun, 4-8-12 Diamond, Achim's p144, 56P6H1V0
  * 2. Random Game: Starts with random cell pattern (~25% density)
@@ -68,15 +78,21 @@ FEATURES:
  *    • Cyclic CA: Multi-state color cycling automaton
  *      - 3 pattern types: Vertical Symmetry, 4-Way Rotational, Random
  *      - 6 visual states with different blink/display patterns
- * 
- * CONTROLS:
+
+   
+  CONTROLS:
+
+
  * • Menu: UP/DOWN navigate, SET selects, Button B goes back
  * • Edit Mode: Arrow keys move cursor, SET toggles cell, long-press SET starts
  * • Simulation: UP/DOWN changes speed (12 levels)
  * • Simulation: LEFT/RIGHT regenerates pattern (game-specific behavior)
  * • Any mode: Button B returns to appropriate menu/submenu
- * 
- * DISPLAY:
+
+   
+   DISPLAY:
+
+   
  * • 64x32 cell grid displayed at 2x scale on 128x64 OLED
  * • Real-time generation counter and cell statistics (most modes)
  * • Blinking cursor in edit mode
@@ -85,8 +101,11 @@ FEATURES:
  *   - Brian's Brain: Blinking dying cells
  *   - Cyclic CA: Multiple blink patterns for different states (no text overlay)
  *   - Seeds/Day & Night: Standard cell display with counters
- * 
- * ALGORITHM:
+
+ 
+   ALGORITHM:
+
+   
  * • Conway's Life: Optimized bit-manipulation with 3-bit rotation
  * • Toroidal (wraparound) boundary conditions
  * • Hash-based pattern repetition detection for auto-reset
