@@ -29,6 +29,7 @@ Conways 'Game of Life' based on toroidal world: Edges wrap around (top connects 
 
 
 
+
 Alternative Games
 
 Four Alternative cellular automata available to play in the Alt Menu.  These include: 
