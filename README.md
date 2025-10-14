@@ -38,7 +38,7 @@ Four Alternative cellular automata available to play in the Alt Menu.  These inc
 
 2. Day & Night - Inverse Conway rules creating dense patterns 2 density options: Medium Start (~35%), Dense Start (~50%) Birth: 3,6,7,8 neighbors | Survival: 3,4,6,7,8 neighbors
 
-3. Seeds - Birth-only automaton creating explosive patterns 2 modes: Random (symmetric center pattern), Custom Birth with exactly 2 neighbors, all cells die each generation
+3. Seeds - Birth-only automaton creating explosive patterns 2 modes: Random (symmetric center pattern) and Custom.  Birth with exactly 2 neighbors, all cells die each generation
 
 4. Cyclic CA - Multi-state cycling automaton 3 pattern types: Vertical Symmetry, 4-Way Rotational, Random 6 visual states with different blink/display patterns
 
@@ -86,7 +86,7 @@ BUTTON MAPPING (Resistor Ladder on A3):
 
 
 
-  CONTROLS:
+CONTROLS:
 
  * • Menu: UP/DOWN navigate, SET selects, Button B goes back
  * • Edit Mode: Arrow keys move cursor, SET toggles cell, long-press SET starts
@@ -96,7 +96,7 @@ BUTTON MAPPING (Resistor Ladder on A3):
 
 
 
-   DISPLAY:
+DISPLAY:
 
  * • 64x32 cell grid displayed at 2x scale on 128x64 OLED
  * • Real-time generation counter and cell statistics (most modes)
