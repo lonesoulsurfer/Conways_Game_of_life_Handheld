@@ -38,15 +38,14 @@ HARDWARE REQUIREMENTS:
 
 BUTTON MAPPING (Resistor Ladder on A3):
 
-
  * • UP: ~39kΩ to 5V    (Navigation/Cursor up/Speed up)
  * • DOWN: ~33kΩ to 5V  (Navigation/Cursor down/Speed down) 
  * • LEFT: ~20kΩ to 5V  (Cursor left/New pattern/Back in menu)
  * • RIGHT: ~10kΩ to 5V (Cursor right/New pattern)
  * • SET: ~5.1kΩ to 5V  (Select/Toggle cell/Start simulation)
- * 
- * BUTTON B (on A4):
 
+
+ * BUTTON B (on A4):
    
  * • ~15K to 5V    (Return to appropriate menu from anywhere)
 
@@ -55,29 +54,29 @@ GAME MODES:
 
 
  * 1. Preset Patterns: Choose from 5 famous Conway patterns
- *    - Coe Ship, Gosper Glider Gun, 4-8-12 Diamond, Achim's p144, 56P6H1V0
+            Coe Ship, Gosper Glider Gun, 4-8-12 Diamond, Achim's p144, 56P6H1V0
  * 2. Random Game: Starts with random cell pattern (~25% density)
- *    - Auto-detects game over and shows statistics
+            Auto-detects game over and shows statistics
  * 3. Symmetric Game: Generate symmetric patterns with 3 sizes
- *    - Small, Medium, Large
- *    - Random symmetry type: Vertical, Horizontal, or 4-way Rotational
+            Small, Medium, Large
+            Random symmetry type: Vertical, Horizontal, or 4-way Rotational
  * 4. Custom Game: Build your own pattern with cursor
- *    - Arrow keys move cursor, SET toggles cells
- *    - Long-press SET to start simulation
- *    - Long-press SET during simulation to return to edit mode
+            Arrow keys move cursor, SET toggles cells
+            Long-press SET to start simulation
+            Long-press SET during simulation to return to edit mode
  * 5. Alt Games: Alternative cellular automata collection
- *    • Brian's Brain: 3-state automaton (alive/dying/dead)
- *      - 5 modes: Small/Medium/Large/Random/Custom
- *      - Visual: solid pixels (alive), blinking pixels (dying)
- *    • Day & Night: Inverse Conway rules creating dense patterns
- *      - 2 density options: Medium Start (~35%), Dense Start (~50%)
- *      - Birth: 3,6,7,8 neighbors | Survival: 3,4,6,7,8 neighbors
- *    • Seeds: Birth-only automaton creating explosive patterns
- *      - 2 modes: Random (symmetric center pattern), Custom
- *      - Birth with exactly 2 neighbors, all cells die each generation
- *    • Cyclic CA: Multi-state color cycling automaton
- *      - 3 pattern types: Vertical Symmetry, 4-Way Rotational, Random
- *      - 6 visual states with different blink/display patterns
+      Brian's Brain: 3-state automaton (alive/dying/dead)
+               5 modes: Small/Medium/Large/Random/Custom
+               Visual: solid pixels (alive), blinking pixels (dying)
+      Day & Night: Inverse Conway rules creating dense patterns
+               2 density options: Medium Start (~35%), Dense Start (~50%)
+               Birth: 3,6,7,8 neighbors | Survival: 3,4,6,7,8 neighbors
+      seeds: Birth-only automaton creating explosive patterns
+               2 modes: Random (symmetric center pattern), Custom
+               Birth with exactly 2 neighbors, all cells die each generation
+      Cyclic CA: Multi-state color cycling automaton
+               3 pattern types: Vertical Symmetry, 4-Way Rotational, Random
+               6 visual states with different blink/display patterns
 
    
   CONTROLS:
