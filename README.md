@@ -12,17 +12,35 @@ The game itself is based on a few, simple, mathematical rules consisting of a gr
 Now you know what it is – what does my hand held game version do?
 
 
+Core Game
 
-FEATURES:
- * • Five game modes: Preset patterns, Random generation, Symmetric patterns, Custom builder, Alternative Games
- * • 12 speed levels with real-time speed control
- * • 5 famous Conway patterns + Symmetric pattern generator (3 sizes)
- * • 4 Alternative cellular automata: Brian's Brain, Day & Night, Seeds, Cyclic CA
- * • Interactive pattern editor with blinking cursor
- * • Game statistics tracking (generations, max cells)
- * • Comprehensive menu system with multiple submenus
- * • Automatic pattern detection and game reset
- * • Battery-optimized resistor ladder button input
+
+Conways 'Game of Life' based on toroidal world: Edges wrap around (top connects to bottom, left to right).  Game includes the following menus:
+
+1. Preset patterns - 5 famous Conway patterns including Coe Ship, Gosper Glider Gun, 4-8-12 Diamond, Achim's p144, 56P6H1V
+   
+2. Random generation - Starts with random cell pattern, auto-resets when pattern dies/repeats
+   
+3. Symmetric pattern generator - Generate symmetric patterns with 3 sizes Small, Medium, Large & Random. Symmetry type: Vertical, Horizontal, or 4-way Rotational
+   
+4. Custom builder - Interactive editor to design your own starting patterns
+   
+5. Alt Games - see below
+
+Alternative Games
+ Four Alternative cellular automata available to play in the Alt Menu.  These include: 
+Brian's Brain - 3-state automaton (alive/dying/dead) 5 modes: Small/Medium/Large/Random/Custom Visual: solid pixels (alive), blinking pixels (dying)
+Day & Night - Inverse Conway rules creating dense patterns 2 density options: Medium Start (~35%), Dense Start (~50%) Birth: 3,6,7,8 neighbors | Survival: 3,4,6,7,8 neighbors
+Seeds - Birth-only automaton creating explosive patterns 2 modes: Random (symmetric center pattern), Custom Birth with exactly 2 neighbors, all cells die each generation
+Cyclic CA - Multi-state cycling automaton 3 pattern types: Vertical Symmetry, 4-Way Rotational, Random 6 visual states with different blink/display patterns
+
+Features
+Interactive pattern editor with blinking cursor
+Real-time generation counter and cell statistics (some modes)
+Comprehensive menu system with multiple submenus
+Smart Detection: Automatically detects when patterns die out or start repeating
+Automatic pattern detection and game reset (some modes)
+Menu System: Clean interface with pattern submenu
 
 
    
