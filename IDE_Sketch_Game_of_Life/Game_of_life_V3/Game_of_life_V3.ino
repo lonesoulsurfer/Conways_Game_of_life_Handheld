@@ -956,16 +956,16 @@ void drawDayNight() {
         }
     }
     
-    // Show generation counter and cell count across the top - smaller text
-    display.setTextSize(1);
-    display.setTextColor(WHITE);
-    display.setCursor(0, 0);
-    display.print("G:");
-    display.print(generation);
-    display.setCursor(50, 0);
-    display.print("C:");
-    display.print(cellCount);
-  
+    // Remove generation and cell count display for Cyclic CA
+    // display.setTextSize(1);
+    // display.setTextColor(WHITE);
+    // display.setCursor(0, 0);
+    // display.print("G:");
+    // display.print(generation);
+    // display.setCursor(50, 0);
+    // display.print("C:");
+    // display.print(cellCount);
+    
     display.display();
 }
 
@@ -1256,14 +1256,15 @@ void drawCyclic() {
         }
     }
     
-    display.setTextSize(1);
-    display.setTextColor(WHITE);
-    display.setCursor(0, 0);
-    display.print("G:");
-    display.print(generation);
-    display.setCursor(50, 0);
-    display.print("C:");
-    display.print(cellCount);
+    // Remove generation and cell count display for Cyclic CA
+    // display.setTextSize(1);
+    // display.setTextColor(WHITE);
+    // display.setCursor(0, 0);
+    // display.print("G:");
+    // display.print(generation);
+    // display.setCursor(50, 0);
+    // display.print("C:");
+    // display.print(cellCount);
     
     display.display();
 }
@@ -1365,19 +1366,18 @@ void drawSeeds() {
         }
     }
     
-    // Show generation counter and cell count
-    display.setTextSize(1);
-    display.setTextColor(WHITE);
-    display.setCursor(0, 0);
-    display.print("G:");
-    display.print(generation);
-    display.setCursor(50, 0);
-    display.print("C:");
-    display.print(cellCount);
+    // Remove generation and cell count display for Cyclic CA
+    // display.setTextSize(1);
+    // display.setTextColor(WHITE);
+    // display.setCursor(0, 0);
+    // display.print("G:");
+    // display.print(generation);
+    // display.setCursor(50, 0);
+    // display.print("C:");
+    // display.print(cellCount);
     
     display.display();
 }
-
 void updateBriansBrain() {
     uint32_t new_board[BOARD_WIDTH];
     uint32_t new_dying[BOARD_WIDTH];
@@ -1434,15 +1434,20 @@ void updateBriansBrain() {
         }
     }
     
-// Update the global arrays
+   // Update the global arrays
     for (int x = 0; x < BOARD_WIDTH; x++) {
         board[x] = new_board[x];
         briansBrain_dying[x] = new_dying[x];
     }
     
+    // Update max cell count if current count is higher
+    if (cellCount > max_cellCount) {
+        max_cellCount = cellCount;
+    }
+    
     // Store hash for pattern detection
     briansBrain_hash = bb_hash;
-}    
+} 
 
 void drawBriansBrain() {
     display.clearDisplay();
@@ -1469,15 +1474,15 @@ void drawBriansBrain() {
         }
     }
     
-    // Show generation counter and cell count across the top
-    display.setTextSize(1);
-    display.setTextColor(WHITE);
-    display.setCursor(0, 0);
-    display.print("G: ");
-    display.print(generation);
-    display.setCursor(60, 0);
-    display.print("C: ");
-    display.print(cellCount);
+    // Remove generation and cell count display for Cyclic CA
+    // display.setTextSize(1);
+    // display.setTextColor(WHITE);
+    // display.setCursor(0, 0);
+    // display.print("G:");
+    // display.print(generation);
+    // display.setCursor(50, 0);
+    // display.print("C:");
+    // display.print(cellCount);
     
     display.display();
 }
@@ -2031,6 +2036,7 @@ else if (isBtnLeft(btnValue)) {
         frame_start_t = millis();
         lastDirectionalPress = now;
     } else if (gameMode == 4) {  // Symmetric Game
+        clearBoard();
         currentSymmetryType = rand() % 3 + 1;
         
         switch(currentSymmetrySize) {
@@ -2045,8 +2051,11 @@ else if (isBtnLeft(btnValue)) {
                 break;
         }
         generation = 0;
+        cellCount = 0;
+        max_cellCount = 0;
         start_t = micros();
         frame_start_t = millis();
+        lastDirectionalPress = now;
     } else if (gameMode == 8 && briansBrainMode) {
         if (briansBrainWasCustom) {
             clearBoard();
@@ -2081,6 +2090,7 @@ else if (isBtnLeft(btnValue)) {
         lastDirectionalPress = now;
     }
 } // End LEFT button
+
 else if (isBtnRight(btnValue)) {
         // Static variables for Brian's Brain button confirmation
         static unsigned long rightButtonFirstPress = 0;
@@ -2162,7 +2172,7 @@ else if (isBtnRight(btnValue)) {
             start_t = micros();
             frame_start_t = millis();
             lastDirectionalPress = now;
-        } else if (gameMode == 8 && briansBrainMode) {
+    } else if (gameMode == 8 && briansBrainMode) {
             if (briansBrainWasCustom) {
                 clearBoard();
                 editMode = true;
@@ -2196,8 +2206,8 @@ else if (isBtnRight(btnValue)) {
             lastDirectionalPress = now;
         }
     } // End RIGHT button
-    } // End else (simulation mode)
-} // Close handleDirectionalButtons() function             
+} // Close handleDirectionalButtons() function    
+}
 
 void handleSetButton() {
     unsigned long now = millis();
@@ -2475,33 +2485,49 @@ else if (inDayNightSubMenu && (!justEnteredSubmenu || (now - submenuEntryTime > 
     buttonProcessingInProgress = false;
 }
 
-            else if (inSymmetricSubMenu && (!justEnteredSubmenu || (now - submenuEntryTime > 400))) {
-                // Handle symmetric size selection
-                justEnteredSubmenu = false;
-                gameMode = 4;
-                currentSymmetrySize = symmetricSizeSelection; // Store selected size
-                currentSymmetryType = rand() % 3 + 1; // Random symmetry type (1-3)
-                
-                switch(currentSymmetrySize) {
-                    case 1: // Small
-                        generateSmallSymmetricPattern(currentSymmetryType);
-                        break;
-                    case 2: // Medium
-                        generateMediumSymmetricPattern(currentSymmetryType);
-                        break;
-                    case 3: // Large
-                        generateSymmetricPattern(currentSymmetryType);
-                        break;
-                }
-                
-                inMenuMode = false;
-                inSymmetricSubMenu = false;
-                editMode = false;
-                generation = 0;
-                start_t = micros();
-                frame_start_t = millis();
-                buttonProcessingInProgress = false;
+          else if (inSymmetricSubMenu && (!justEnteredSubmenu || (now - submenuEntryTime > 400))) {
+    // Handle symmetric size selection
+    justEnteredSubmenu = false;
+    gameMode = 4;
+    currentSymmetrySize = symmetricSizeSelection; // Store selected size
+    currentSymmetryType = rand() % 3 + 1; // Random symmetry type (1-3)
+    
+    // Clear the board first
+    clearBoard();
+    
+    switch(currentSymmetrySize) {
+        case 1: // Small
+            generateSmallSymmetricPattern(currentSymmetryType);
+            break;
+        case 2: // Medium
+            generateMediumSymmetricPattern(currentSymmetryType);
+            break;
+        case 3: // Large
+            generateSymmetricPattern(currentSymmetryType);
+            break;
+    }
+    
+    inMenuMode = false;
+    inSymmetricSubMenu = false;
+    editMode = false;
+    generation = 0;
+    cellCount = 0;  // ADD THIS LINE - initialize cell count
+    max_cellCount = 0;  // ADD THIS LINE - initialize max cell count
+    start_t = micros();
+    frame_start_t = millis();
+    buttonProcessingInProgress = false;
+    
+    // Force immediate display update
+    display.clearDisplay();
+    for (int x = 0; x < BOARD_WIDTH; x++) {
+        for (int y = 0; y < BOARD_HEIGHT; y++) {
+            if (board[x] & (1UL << y)) {
+                drawCell(x, y, WHITE);
             }
+        }
+    }
+    display.display();
+}  
     
 else if (inSeedsSubMenu && (!justEnteredSubmenu || (now - submenuEntryTime > 400))) {
     justEnteredSubmenu = false;
@@ -2928,17 +2954,15 @@ static inline uint32_t rotate_shift_three(uint32_t x, int n) {
 
           generation++; // Count generations only when simulation actually advances
             
-               switch (gameMode) {
-                case 1:
-                case 2:
-                case 3:
-                    // Conway's Game of Life (existing code below)
-                    break;
-                    
-                case 4: // Symmetric Game (keep this for regular symmetric patterns)
-                    break;
-                    
-                case 5: // Day & Night
+             switch (gameMode) {
+    case 1:
+    case 2:
+    case 3:
+    case 4:  // ADD case 4 here - Symmetric Game uses same Conway rules
+        // Conway's Game of Life (existing code below)
+        break;
+        
+    case 5: // Day & Night  
                     if (dayNightMode) {
                         updateDayNight();
                         drawDayNight();
@@ -3026,13 +3050,12 @@ static inline uint32_t rotate_shift_three(uint32_t x, int n) {
                     break;
             }
           
-          // Conway's Game of Life logic (only runs for cases 1, 2, 3)
-            if (gameMode >= 1 && gameMode <= 3) {
-               cellCount = 0; // Reset cell count before each generation
+          // Conway's Game of Life logic (runs for cases 1, 2, 3, 4)
+            if (gameMode >= 1 && gameMode <= 4) {  // CHANGE 3 TO 4 HERE
+             cellCount = 0; // Reset cell count before each generation
 
-            // Clear display only for Conway's Game of Life modes
+         // Clear display only for Conway's Game of Life modes
             display.clearDisplay();
-            
             for (int x = 0; x < BOARD_WIDTH; x++) {
                 uint32_t left;
                 if (x == 0) {
