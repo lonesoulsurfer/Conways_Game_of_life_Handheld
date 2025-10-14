@@ -27,20 +27,35 @@ Conways 'Game of Life' based on toroidal world: Edges wrap around (top connects 
    
 5. Alt Games - see below
 
+
+
 Alternative Games
- Four Alternative cellular automata available to play in the Alt Menu.  These include: 
-Brian's Brain - 3-state automaton (alive/dying/dead) 5 modes: Small/Medium/Large/Random/Custom Visual: solid pixels (alive), blinking pixels (dying)
-Day & Night - Inverse Conway rules creating dense patterns 2 density options: Medium Start (~35%), Dense Start (~50%) Birth: 3,6,7,8 neighbors | Survival: 3,4,6,7,8 neighbors
-Seeds - Birth-only automaton creating explosive patterns 2 modes: Random (symmetric center pattern), Custom Birth with exactly 2 neighbors, all cells die each generation
-Cyclic CA - Multi-state cycling automaton 3 pattern types: Vertical Symmetry, 4-Way Rotational, Random 6 visual states with different blink/display patterns
+
+Four Alternative cellular automata available to play in the Alt Menu.  These include: 
+
+1. Brian's Brain - 3-state automaton (alive/dying/dead) 5 modes: Small/Medium/Large/Random/Custom Visual: solid pixels (alive), blinking pixels (dying)
+
+2. Day & Night - Inverse Conway rules creating dense patterns 2 density options: Medium Start (~35%), Dense Start (~50%) Birth: 3,6,7,8 neighbors | Survival: 3,4,6,7,8 neighbors
+
+3. Seeds - Birth-only automaton creating explosive patterns 2 modes: Random (symmetric center pattern), Custom Birth with exactly 2 neighbors, all cells die each generation
+
+4. Cyclic CA - Multi-state cycling automaton 3 pattern types: Vertical Symmetry, 4-Way Rotational, Random 6 visual states with different blink/display patterns
+
+
 
 Features
-Interactive pattern editor with blinking cursor
-Real-time generation counter and cell statistics (some modes)
-Comprehensive menu system with multiple submenus
-Smart Detection: Automatically detects when patterns die out or start repeating
-Automatic pattern detection and game reset (some modes)
-Menu System: Clean interface with pattern submenu
+
+1. Interactive pattern editor with blinking cursor
+
+2. Real-time generation counter and cell statistics (some modes)
+
+3. Comprehensive menu system with multiple submenus
+
+4. Smart Detection: Automatically detects when patterns die out or start repeating
+
+5. Automatic pattern detection and game reset (some modes)
+
+6. Menu System: Clean interface with pattern submenu
 
 
    
