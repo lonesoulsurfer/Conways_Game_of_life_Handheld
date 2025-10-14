@@ -65,18 +65,27 @@ GAME MODES:
             Long-press SET to start simulation
             Long-press SET during simulation to return to edit mode
  * 5. Alt Games: Alternative cellular automata collection
-      Brian's Brain: 3-state automaton (alive/dying/dead)
+
+
+       Brian's Brain: 3-state automaton (alive/dying/dead)
                5 modes: Small/Medium/Large/Random/Custom
                Visual: solid pixels (alive), blinking pixels (dying)
+
+
       Day & Night: Inverse Conway rules creating dense patterns
                2 density options: Medium Start (~35%), Dense Start (~50%)
-               Birth: 3,6,7,8 neighbors | Survival: 3,4,6,7,8 neighbors
-      seeds: Birth-only automaton creating explosive patterns
+                Birth: 3,6,7,8 neighbors | Survival: 3,4,6,7,8 neighbors
+
+
+       seeds: Birth-only automaton creating explosive patterns
                2 modes: Random (symmetric center pattern), Custom
                Birth with exactly 2 neighbors, all cells die each generation
-      Cyclic CA: Multi-state color cycling automaton
+
+
+       Cyclic CA: Multi-state color cycling automaton
                3 pattern types: Vertical Symmetry, 4-Way Rotational, Random
                6 visual states with different blink/display patterns
+
 
    
   CONTROLS:
