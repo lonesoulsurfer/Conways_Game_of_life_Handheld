@@ -6,13 +6,6 @@ Short - https://youtube.com/shorts/Atr1aoWWVLA
 Long - https://youtu.be/dLQRpCf72iw
 
 
-
-I’ve been fascinated with Conway’s Game of Life ever since I read ‘The Recursive Universe’ way back in 2012. Since then, I wanted a way that I could play the game just like you would play a Nintendo ‘Game & Watch’ – a pocket-sized version that I could whip out anytime and start to explore & build my own patterns.
-
-Fast-forward to 2025 and that idea has become reality! Arduino AI Assistant has been a massive help in building the code and there is absolutely no way that I could of done it without AI’s assistance. If you haven’t used it before and don’t know much about coding, then I strongly recommend that you give it a try.
-
-So, what is Conway’s Game of Life (or GOL for short!). I recently gave the below description in another GOL project which might help those that haven’t heard of it before:
-
 The Game of Life is a cellular automation created by mathematician John Conway. It's what is known as a zero player game, meaning that its evolution and game play is determined by its initial state and requires no further input. You interact with the Game of Life by creating an initial configuration and observing how it evolves.
 
 The game itself is based on a few, simple, mathematical rules consisting of a grid of cells that can either live, die or multiply. When the game is run, the cells can give the illusion that they are alive which is what makes this game so interesting.
@@ -20,108 +13,83 @@ Now you know what it is – what does my hand held game version do?
 
 
 
-Core Game
+FEATURES:
+ * • Five game modes: Preset patterns, Random generation, Symmetric patterns, Custom builder, Alternative Games
+ * • 12 speed levels with real-time speed control
+ * • 5 famous Conway patterns + Symmetric pattern generator (3 sizes)
+ * • 4 Alternative cellular automata: Brian's Brain, Day & Night, Seeds, Cyclic CA
+ * • Interactive pattern editor with blinking cursor
+ * • Game statistics tracking (generations, max cells)
+ * • Comprehensive menu system with multiple submenus
+ * • Automatic pattern detection and game reset
+ * • Battery-optimized resistor ladder button input
 
-• Cellular Automaton: Simulates Conway's famous "zero-player game" where cells live/die based on neighbor count 
-• Displayed on a 128x64 OLED screen 
-• Toroidal World: Edges wrap around (top connects to bottom, left to right)
-
-
-
-5 Game Modes (4 & 5 added in V2)
-1. Random Game: Starts with random cell pattern, auto-resets when pattern dies/repeats
-2. Custom Builder: Interactive editor to design your own starting patterns
-3. Preset Patterns: 5 famous Conway patterns including Gosper Glider Gun
-4. Custom Game: Build your own pattern with cursor, long-press SET to start
-5. Alt Games: Alternative cellular automata collection
    
-     • Brian's Brain: 3-state automaton with birth/dying/dead phases
+ * HARDWARE REQUIREMENTS:
+ * • Arduino-compatible microcontroller (tested on Trinket M0)
+ * • SSD1306 128x64 OLED display (I2C)
+ * • 5-button resistor ladder on analog pin A3
+ * • Button B on analog pin A4 (menu return/navigation)
+
    
-     • Day & Night: Inverse Conway rules creating dense stable patterns
+ * BUTTON MAPPING (Resistor Ladder on A3):
+ * • UP: ~39kΩ to 5V    (Navigation/Cursor up/Speed up)
+ * • DOWN: ~33kΩ to 5V  (Navigation/Cursor down/Speed down) 
+ * • LEFT: ~20kΩ to 5V  (Cursor left/New pattern/Back in menu)
+ * • RIGHT: ~10kΩ to 5V (Cursor right/New pattern)
+ * • SET: ~5.1kΩ to 5V  (Select/Toggle cell/Start simulation)
+ * 
+ * BUTTON B (on A4):
+ * • ~15K to 5V    (Return to appropriate menu from anywhere)
+
    
-     • Seeds: Birth-only automaton creating explosive wave patterns
-   
-     • Langton's Ant: Single ant creating emergent highway patterns
-
-
-
-Controls (5-button resistor ladder)
-
-• Menu Navigation: UP/DOWN navigate, SET selects, LEFT goes back 
-• Pattern Editor: Arrow keys move cursor, SET toggles cells, long-press SET starts simulation 
-• During Simulation: UP/DOWN changes speed (12 levels), LEFT/RIGHT generates new random
-
-
-
-Features
-
-• Real-time Statistics: Generation counter, live cell count, max cells reached 
-• Smart Detection: Automatically detects when patterns die out or start repeating 
-• Game Over Screen: Shows final statistics for 4 seconds 
-• Battery Optimized: Efficient bit-manipulation algorithms 
-• Menu System: Clean interface with pattern submenu
-
-
-
-
-
-Heres some more ideas to implement:
-
-
-Pattern Management
-
-
-• Pattern Save/Load: Store custom patterns in EEPROM with names 
-
-• Pattern Library: More famous patterns (pulsar, pentadecathlon, etc.) 
-
-• Random Seeds: Different randomization algorithms (sparse, dense, clusters) 
-
-• Symmetrical Patterns: Generate symmetric starting conditions
-
-Game Modes
-
-
-• Survival Mode: Try to keep population above threshold for X generations 
-
-• Target Mode: Reach specific cell count goals 
-
-• Time Challenge: Fastest to stabilization 
-
-• Multi-Rule Mode: Different cellular automaton rules (B36/S23, etc.)
-
-
-
-
-Advanced Controls
-
-
-• Step Mode: Advance one generation at a time with button press 
-
-• Rewind: Store last N generations for backward stepping 
-
-• Pause/Resume: Freeze simulation mid-run 
-
-• Bookmark Positions: Mark interesting generations to return to
-
-
-
-Statistics & Analysis
-
-
-• Population Oscillation Detection: Identify period-N oscillators 
-
-• Stability Analysis: Time to stabilization metrics 
-
-• High Score System: Longest-lived patterns, highest populations 
-
-• Pattern Classification: Auto-detect gliders, oscillators, still lifes
-
-
-
-Hardware Enhancements
-
-
-• Sound Effects: Beeps for births/deaths, musical tones for populations 
-
- • Color Coding: Different colors for cell age or generation born
+ * GAME MODES:
+ * 1. Preset Patterns: Choose from 5 famous Conway patterns
+ *    - Coe Ship, Gosper Glider Gun, 4-8-12 Diamond, Achim's p144, 56P6H1V0
+ * 2. Random Game: Starts with random cell pattern (~25% density)
+ *    - Auto-detects game over and shows statistics
+ * 3. Symmetric Game: Generate symmetric patterns with 3 sizes
+ *    - Small, Medium, Large
+ *    - Random symmetry type: Vertical, Horizontal, or 4-way Rotational
+ * 4. Custom Game: Build your own pattern with cursor
+ *    - Arrow keys move cursor, SET toggles cells
+ *    - Long-press SET to start simulation
+ *    - Long-press SET during simulation to return to edit mode
+ * 5. Alt Games: Alternative cellular automata collection
+ *    • Brian's Brain: 3-state automaton (alive/dying/dead)
+ *      - 5 modes: Small/Medium/Large/Random/Custom
+ *      - Visual: solid pixels (alive), blinking pixels (dying)
+ *    • Day & Night: Inverse Conway rules creating dense patterns
+ *      - 2 density options: Medium Start (~35%), Dense Start (~50%)
+ *      - Birth: 3,6,7,8 neighbors | Survival: 3,4,6,7,8 neighbors
+ *    • Seeds: Birth-only automaton creating explosive patterns
+ *      - 2 modes: Random (symmetric center pattern), Custom
+ *      - Birth with exactly 2 neighbors, all cells die each generation
+ *    • Cyclic CA: Multi-state color cycling automaton
+ *      - 3 pattern types: Vertical Symmetry, 4-Way Rotational, Random
+ *      - 6 visual states with different blink/display patterns
+ * 
+ * CONTROLS:
+ * • Menu: UP/DOWN navigate, SET selects, Button B goes back
+ * • Edit Mode: Arrow keys move cursor, SET toggles cell, long-press SET starts
+ * • Simulation: UP/DOWN changes speed (12 levels)
+ * • Simulation: LEFT/RIGHT regenerates pattern (game-specific behavior)
+ * • Any mode: Button B returns to appropriate menu/submenu
+ * 
+ * DISPLAY:
+ * • 64x32 cell grid displayed at 2x scale on 128x64 OLED
+ * • Real-time generation counter and cell statistics (most modes)
+ * • Blinking cursor in edit mode
+ * • Automatic game over detection and statistics display
+ * • Game-specific visual indicators:
+ *   - Brian's Brain: Blinking dying cells
+ *   - Cyclic CA: Multiple blink patterns for different states (no text overlay)
+ *   - Seeds/Day & Night: Standard cell display with counters
+ * 
+ * ALGORITHM:
+ * • Conway's Life: Optimized bit-manipulation with 3-bit rotation
+ * • Toroidal (wraparound) boundary conditions
+ * • Hash-based pattern repetition detection for auto-reset
+ * • Efficient neighbor counting using lookup table
+ * • Game-specific rule engines for each cellular automaton
+ * • Pattern detection prevents infinite loops in Random/Custom modes
