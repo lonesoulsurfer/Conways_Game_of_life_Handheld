@@ -7,7 +7,7 @@ This is a handheld Conway's Game of Life with an OLED screen and 6 buttons. It h
 
 ## Build guide and video
 
-- Step-by-step build guide on Instructables: not available yet.
+- Step-by-step build guide on Instructables: [Conway's Game of Life - Handheld Version, Powered by Adafruit Trinket M0](https://www.instructables.com/Conways-Game-of-Life-Handheld-Version-Powered-by-A/)
 - Videos on YouTube: [short video](https://youtube.com/shorts/Atr1aoWWVLA) and [long video](https://youtu.be/dLQRpCf72iw)
 
 ## Features
