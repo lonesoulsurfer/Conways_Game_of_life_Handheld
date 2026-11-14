@@ -1,119 +1,72 @@
-![OOLO0046](https://github.com/user-attachments/assets/da0e76cf-106c-456c-9749-726d07561c74)        ![QAZB0208](https://github.com/user-attachments/assets/6ac36b5f-e18f-4702-b923-bd1952dfdfd4)
+# Game of Life Handheld
 
-YouTube Vid
-Short - https://youtube.com/shorts/Atr1aoWWVLA
+This is a handheld Conway's Game of Life with an OLED screen and 6 buttons. It has 5 famous patterns, random and symmetric patterns, a pattern editor and 4 other cellular automata. The same hardware also plays my [Star Wars game](https://github.com/lonesoulsurfer/Star_Wars_Handheld_Game).
 
-Long - https://youtu.be/dLQRpCf72iw
+![Game of Life Handheld](https://github.com/user-attachments/assets/da0e76cf-106c-456c-9749-726d07561c74)
+![Game of Life Handheld screen](https://github.com/user-attachments/assets/6ac36b5f-e18f-4702-b923-bd1952dfdfd4)
 
+## Build guide and video
 
-The Game of Life is a cellular automation created by mathematician John Conway. It's what is known as a zero player game, meaning that its evolution and game play is determined by its initial state and requires no further input. You interact with the Game of Life by creating an initial configuration and observing how it evolves.
+- Step-by-step build guide on Instructables: not available yet.
+- Videos on YouTube: [short video](https://youtube.com/shorts/Atr1aoWWVLA) and [long video](https://youtu.be/dLQRpCf72iw)
 
-The game itself is based on a few, simple, mathematical rules consisting of a grid of cells that can either live, die or multiply. When the game is run, the cells can give the illusion that they are alive which is what makes this game so interesting.
-Now you know what it is – what does my hand held game version do?
+## Features
 
+- Conway's Game of Life on a 64 × 32 cell grid, with edges that wrap around
+- 5 famous patterns, random patterns and symmetric patterns
+- A pattern editor, to draw your own start pattern
+- 4 other cellular automata: Brian's Brain, Day & Night, Seeds and Cyclic CA
+- Automatic detection when a pattern dies or repeats
+- 12 speed levels
 
-Core Game
+The [user guide](docs/MANUAL.md) tells you how to use all the menus and controls.
 
+## What you need
 
-Conways 'Game of Life' based on toroidal world: Edges wrap around (top connects to bottom, left to right).  Game includes the following menus:
+### Hardware
 
-1. Preset patterns - 5 famous Conway patterns including Coe Ship, Gosper Glider Gun, 4-8-12 Diamond, Achim's p144, 56P6H1V
-   
-2. Random generation - Starts with random cell pattern, auto-resets when pattern dies/repeats
-   
-3. Symmetric pattern generator - Generate symmetric patterns with 3 sizes Small, Medium, Large & Random. Symmetry type: Vertical, Horizontal, or 4-way Rotational
-   
-4. Custom builder - Interactive editor to design your own starting patterns
-   
-5. Alt Games - see below
+- Adafruit Trinket M0
+- SSD1306 128 × 64 OLED display (I2C)
+- 5 buttons on a resistor ladder (pin A3), and button B (pin A4)
+- All parts are in the parts list ([PDF](Parts%20List.pdf) or Excel).
+- The schematic is [Schematic.png](Schematic.png).
+- The Gerber files for the PCB and the front panel are in [Gerber Files](Gerber%20Files/). You can send them to a PCB maker.
 
+### Software
 
+- Arduino IDE
 
+## Upload the firmware
 
-Alternative Games
+1. In the Arduino IDE, click **File → Preferences**.
+2. In **Additional boards manager URLs**, add: `https://adafruit.github.io/arduino-board-index/package_adafruit_index.json`
+3. Open the **Boards Manager**. Search for **Adafruit SAMD Boards** and install it.
+4. Open the **Library Manager**. Install **Adafruit GFX Library** and **Adafruit SSD1306**.
+5. Download this repository. Click **Code → Download ZIP**, then extract the ZIP file.
+6. Open `IDE_Sketch_Game_of_Life/Game_of_life_V3/Game_of_life_V3.ino`. This is the newest version.
+7. Connect the Trinket M0 to your computer with a USB cable.
+8. In the **Tools** menu, set **Board** to **Adafruit Trinket M0**, and set **Port** to the port of the Trinket.
+9. Click **Upload**.
 
-Four Alternative cellular automata available to play in the Alt Menu.  These include: 
+## Files in this repository
 
-1. Brian's Brain - 3-state automaton (alive/dying/dead) 5 modes: Small/Medium/Large/Random/Custom Visual: solid pixels (alive), blinking pixels (dying)
+| Folder or file | Contents |
+|----------------|----------|
+| `IDE_Sketch_Game_of_Life/` | Firmware, versions 1, 2 and 3 |
+| `Eagle Files/` | Eagle files for the PCB |
+| `Game of Life - Front Panel Design/` | KiCad, SVG and DXF files for the front panel |
+| `Gerber Files/` | Gerber files for the PCB and the front panel, ready to order |
+| `Parts List.pdf`, `Parts List.xlsx` | Parts list |
+| `Schematic.png`, `PCB.png` | Schematic and PCB image |
+| `docs/MANUAL.md` | User guide |
 
-2. Day & Night - Inverse Conway rules creating dense patterns 2 density options: Medium Start (~35%), Dense Start (~50%) Birth: 3,6,7,8 neighbors | Survival: 3,4,6,7,8 neighbors
+## Support
 
-3. Seeds - Birth-only automaton creating explosive patterns 2 modes: Random (symmetric center pattern) and Custom.  Birth with exactly 2 neighbors, all cells die each generation
+Do you like this project? You can support my work on [GitHub Sponsors](https://github.com/sponsors/lonesoulsurfer).
 
-4. Cyclic CA - Multi-state cycling automaton 3 pattern types: Vertical Symmetry, 4-Way Rotational, Random 6 visual states with different blink/display patterns
+## Licence
 
+- **Code:** [MIT License](LICENSE). You can use, change and sell it.
+- **Hardware** (PCB, panels and Gerber files): [CERN Open Hardware Licence v2, Strongly Reciprocal](LICENSE-HARDWARE). You can make, change and sell boards. If you share or sell a changed design, you must also share the changed design files under the same licence.
 
-
-Features
-
-1. Interactive pattern editor with blinking cursor
-
-2. Real-time generation counter and cell statistics (some modes)
-
-3. Comprehensive menu system with multiple submenus
-
-4. Smart Detection: Automatically detects when patterns die out or start repeating
-
-5. Automatic pattern detection and game reset (some modes)
-
-6. Menu System: Clean interface with pattern submenu
-
-
-   
-HARDWARE REQUIREMENTS:
-
-1. Arduino-compatible microcontroller (tested on Trinket M0)
-   
-2. SSD1306 128x64 OLED display (I2C)
- 
-3. 5-button resistor ladder on analog pin A3
-  
-4.  Button B on analog pin A4 (menu return/navigation)
-
-   
-
-BUTTON MAPPING (Resistor Ladder on A3):
-
- * • UP: ~39kΩ to 5V    (Navigation/Cursor up/Speed up)
- * • DOWN: ~33kΩ to 5V  (Navigation/Cursor down/Speed down) 
- * • LEFT: ~20kΩ to 5V  (Cursor left/New pattern/Back in menu)
- * • RIGHT: ~10kΩ to 5V (Cursor right/New pattern)
- * • SET: ~5.1kΩ to 5V  (Select/Toggle cell/Start simulation)
-
- * BUTTON B (on A4):
-   
- * • ~15K to 5V    (Return to appropriate menu from anywhere)
-
-
-
-CONTROLS:
-
- * • Menu: UP/DOWN navigate, SET selects, Button B goes back
- * • Edit Mode: Arrow keys move cursor, SET toggles cell, long-press SET starts
- * • Simulation: UP/DOWN changes speed (12 levels)
- * • Simulation: LEFT/RIGHT regenerates pattern (game-specific behavior)
- * • Any mode: Button B returns to appropriate menu/submenu
-
-
-
-DISPLAY:
-
- * • 64x32 cell grid displayed at 2x scale on 128x64 OLED
- * • Real-time generation counter and cell statistics (most modes)
- * • Blinking cursor in edit mode
- * • Automatic game over detection and statistics display
- * • Game-specific visual indicators:
- *   - Brian's Brain: Blinking dying cells
- *   - Cyclic CA: Multiple blink patterns for different states (no text overlay)
- *   - Seeds/Day & Night: Standard cell display with counters
-
- 
-   ALGORITHM:
-
-   
- * • Conway's Life: Optimized bit-manipulation with 3-bit rotation
- * • Toroidal (wraparound) boundary conditions
- * • Hash-based pattern repetition detection for auto-reset
- * • Efficient neighbor counting using lookup table
- * • Game-specific rule engines for each cellular automaton
- * • Pattern detection prevents infinite loops in Random/Custom modes
+Copyright (c) 2025 Marcus (lonesoulsurfer).
